@@ -5,5 +5,9 @@ This sim can roll a 4, 6, 8, 10, 12 or 20 sided die
 Added a loop so you can continue to roll dice or quit  
 Added a loop so you can roll multiple of the same dice at one time
 <!--This did result in an error in the replay loop which I will work on in my next session-->
+Updated all lines of code in match/case code  
+Updated lines that print out to specify the dice and amount of dice that were rolled  
+Fixed error in reroll loop, probably need to clean up code still, but it is working properly  
+
 
 
