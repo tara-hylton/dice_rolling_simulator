@@ -1,19 +1,12 @@
 import random
 
-#def is_number(input_value):
-    #try:
-        #float(input_value)
-        #return True
-    #except ValueError:
-        #return False
-
 #Function that rolls the dice, total roll is initialized to 0 and will print total roll at end.
-def roll_dice(sides,number_of_dice):
+def roll_dice(n_sided,number_of_dice):
     i = 0
     total_roll = 0
     while i < number_of_dice:
         i += 1
-        match sides:
+        match n_sided:
             case 4:
                 total_roll += random.randint(1, 4)
             case 6:
@@ -26,40 +19,53 @@ def roll_dice(sides,number_of_dice):
                 total_roll += random.randint(1, 12)
             case 20:
                 total_roll += random.randint(1, 20)
-    print(f'Your total roll of {number_of_dice} - {sides} sided dice is: {total_roll}')
+    print(f'Your total roll of {number_of_dice} - {n_sided} sided dice is: {total_roll}')
 
+print("Welcome to the fantasy dice roller simulator! Roll for initiative!")
 
-#Input for roll of dice, also verifies that input is a positive integer, not zero, not a letter or character, and
+#Input for roll of dice and verifies the input is valid.
 def get_input(input_value):
-    input_value = input("What die would you like to roll?\n 4 sided\n 6 sided\n 8 sided\n 10 sided\n 12 sided\n 20 sided\n")
-    if input_value.isnumeric() and (input_value != "0"):
-        sides = int(input_value)
-        list_of_dice = [4,6,8,10,12,20]
-        if sides in list_of_dice:
+    random_error = ["You have failed!", "You have doomed us all!", "You hit a trap!",
+                    "Oh no! You got drunk at the tavern!", "No one asked for a bard...",
+                    "We requested a new dungeon master.", "You're not a barbarian!"]
+    random_string_error = random.choice(random_error) #chooses random error message
+    input_value = input("Please choose which dice you would like to roll by entering the number of sides (one choice)?\n 4 sided\n 6 sided\n 8 sided\n 10 sided\n 12 sided\n 20 sided\n")
+    if input_value.isnumeric() and (input_value != "0"): #ensures char is positive number and not equal to zero
+        n_sided = int(input_value)
+        list_of_dice = [4,6,8,10,12,20] #ensures number is in the list of dice
+        if n_sided in list_of_dice:
             print("How many dice are you rolling?")
             input_value = input()
-            if input_value.isnumeric() and input_value != "0":
+            if input_value.isnumeric() and input_value != "0":  #ensures char is positive number and not equal to zero
                 number_of_dice = int(input_value)
-                roll_dice(sides,number_of_dice)
+                roll_dice(n_sided,number_of_dice)          #calls the function to roll the dice
             else:
-                print("Your choice is invalid.")
+                print(random_string_error)
         else:
-            print("You can't read")
+            print(random_string_error)
     else:
-        print("Your choice is an invalid.")
+        print(random_string_error)
 
-get_input(input)
+get_input(input)   #calls the function to get the input
 
-#Reroll ask.
+#Asks user if they would like to roll again and verifies input is valid.
 while True:
-    answer = input("Would you like to roll again? y/n\n").lower()
+    answer = input("Would you like to try again hero? y/n\n").lower()
     if answer in "y":
         get_input(input)
     elif answer in "n":
-        print("May all of your rolls do max damage.")
+        random_goodbye = ["May all of your rolls do max damage. Well met!",
+                          "May all of your hits be critical. Good day!""May you always gain initiative over enemies. Goodbye!",
+                          "May all of your knives be ogre slaying. I bid you good morrow!"]
+        random_string_goodbye = random.choice(random_goodbye)   #chooses random goodbye message
+        print(random_string_goodbye)
         break
     else:
-        print("Not a valid choice. Would you like to roll again?")
+        random_error = ["You have failed!", "You have doomed us all!", "You hit a trap!",
+                        "Oh no! You got drunk at the tavern!", "No one asked for a bard...",
+                        "We requested a new dungeon master.", "You're not a barbarian!"]
+        random_string_error = random.choice(random_error)     #chooses random error message
+        print(random_string_error)
 
 
 

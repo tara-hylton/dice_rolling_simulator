@@ -14,5 +14,7 @@ verify that a positive integer is being used.
 Updated to cover choice of zero.  
 Updated to cover only dice in the list.  
 All options should be covered at this point, cleaned up repeating code as well.  
+Add some strings that will have messages chosen at random when there is an error or when exiting.  
+Updated and added some comments to the code.
 
 
