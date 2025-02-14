@@ -10,6 +10,9 @@ Updated lines that print out to specify the dice and amount of dice that were ro
 Fixed error in reroll loop, probably need to clean up code still, but it is working properly  
 Cleaned up some code, added some comments to the program  
 Made a function to get the input for the choice of dice and number of dice being rolled and added built in function to
-verify that a positive integer is being used. 
+verify that a positive integer is being used.   
+Updated to cover choice of zero.  
+Updated to cover only dice in the list.  
+All options should be covered at this point, cleaned up repeating code as well.  
 
 
