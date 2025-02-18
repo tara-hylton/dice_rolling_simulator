@@ -17,5 +17,5 @@ All options should be covered at this point, cleaned up repeating code as well.
 Add some strings that will have messages chosen at random when there is an error or when exiting.  
 Updated and added some comments to the code.
 Did some final updates on outgoing messages. Triple checked code
-
+Added a name input, added some additional conditions and print statements
 
