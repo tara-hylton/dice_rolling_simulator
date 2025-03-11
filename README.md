@@ -18,4 +18,4 @@ Add some strings that will have messages chosen at random when there is an error
 Updated and added some comments to the code.
 Did some final updates on outgoing messages. Triple checked code
 Added a name input, added some additional conditions and print statements
-
+Added some words to the print statements

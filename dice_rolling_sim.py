@@ -35,9 +35,9 @@ your_name = input("Welcome to the fantasy dice roller simulator! What is your na
 
 #Input for roll of dice and verifies the input is valid.
 def get_input(input_value):
-    random_error = ["You have failed!", "You have doomed us all!", "You hit a trap!",
-                    "Oh no! You got drunk at the tavern!", "No one asked for a bard...",
-                    "Time for a new dungeon master.", "You're not a barbarian!"]
+    random_error = ["Error! You have failed!", "Error! You have doomed us all!", "Error! You hit a trap!",
+                    "Error! You got drunk at the tavern!", "Error! No one asked for a bard...",
+                    "Error! Time for a new dungeon master.", "Error! You're not a barbarian!"]
     random_string_error = random.choice(random_error) #chooses random error message
     input_value = input(f'{your_name}, please choose which dice you would like to roll by entering the number of sides (one choice)?\n 4 sided\n 6 sided\n 8 sided\n 10 sided\n 12 sided\n 20 sided\n')
     if input_value.isnumeric() and (input_value != "0"): #ensures char is positive number and not equal to zero
